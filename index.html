@@ -33,8 +33,8 @@
 			<nav class="navigation__container">
 				<ul class="navigation__list">
 					<li><a href="https://banksy-design.github.io">Home</a></li>
-					<li><a href="https://banksy-design.github.io/index.html#blog">Portfolio</a></li>
-					<li><a href="https://banksy-design.github.io/index.html#contact">Contact</a></li>
+					<li><a href="#blog">Portfolio</a></li>
+					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 			<div class="navigation__burger">
@@ -94,56 +94,6 @@
 			<figure class="web-design__visual"></figure>
 		</section>
 		<!-- END SECTION: Web Design -->
-		<!-- SECTION: Work -->
-		<section id="work" class="work">
-			<h2 class="work__heading title">Latest Projects</h2>
-			<div class="work__wrapper wrapper--large">
-				<ul class="work__list">
-					<li class="work__list-el work__list-el--is-active">
-						<div class="work__content">
-							<div class="work__content-blurb blurb blurb--framed">
-								<h3 class="blurb__heading">Strategik INC<br>Web Design</h3>
-								<p class="blurb__copy">The awesome guys at Strategik INC were superb to work with because they knew their goals exactly.</p>
-							</div>
-							<a class="transform-link" href="#0">See full project</a>
-						</div>
-						<div class="work__visual">
-							<img src="https://denisdemchenko.ru/project/banksy-design.github.io/img/work-strategik.jpg" alt="Strategik INC">
-						</div>
-					</li>
-					<li class="work__list-el">
-						<div class="work__content">
-							<div class="work__content-blurb blurb blurb--framed">
-								<h3 class="blurb__heading">Ēostre UI Kit<br>Web Design</h3>
-								<p class="blurb__copy">Ēostre UI Kit is made following the latest design trends with focus on usability and fast workflow.</p>
-							</div>
-							<a class="transform-link" href="#0">See full project</a>
-						</div>
-						<div class="work__visual">
-							<img src="https://denisdemchenko.ru/project/banksy-design.github.io/img/work-eostre.jpg" alt="Ēostre UI Kit">
-						</div>
-					</li>
-					<li class="work__list-el">
-						<div class="work__content">
-							<div class="work__content-blurb blurb blurb--framed">
-								<h3 class="blurb__heading">Go Outside<br>App Design</h3>
-								<p class="blurb__copy">Quick concept for a fictitious wildlife exploration app. Grab the PSD and start your own exploration.</p>
-							</div>
-							<a class="transform-link" href="#0">See full project</a>
-						</div>
-						<div class="work__visual">
-							<img src="https://denisdemchenko.ru/project/banksy-design.github.io/img/work-go-outside.jpg" alt="Go Outside App">
-						</div>
-					</li>
-				</ul>
-				<ul class="work__navigation">
-					<li class="work__navigation-el work__navigation-el--is-active"></li>
-					<li class="work__navigation-el"></li>
-					<li class="work__navigation-el"></li>
-				</ul>
-			</div>
-		</section>
-		<!-- END SECTION: Work -->
 		<!-- SECTION: Blog -->
 		<section id="blog" class="blog">
 			<h2 class="blog__heading title">Portfolio</h2>
@@ -278,5 +228,21 @@
 	<!-- jQuery local fallback -->
 	<script>window.jQuery || document.write('<script src="https://denisdemchenko.ru/project/banksy-design.github.io/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 	<script src="https://denisdemchenko.ru/project/banksy-design.github.io/js/functions.js"></script>
+	<script>
+        const anchors = document.querySelectorAll('a[href*="#"]')
+
+        for (let anchor of anchors) {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault()
+
+            const blockID = anchor.getAttribute('href').substr(1)
+
+            document.getElementById(blockID).scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            })
+          })
+        }
+    </script>
 </body>
 </html>
